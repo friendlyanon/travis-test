@@ -1,0 +1,25 @@
+language: generic
+
+dist: bionic
+
+jobs:
+  include:
+    - os: linux
+      language: python
+      python: 3.6
+      compiler: gcc
+      env:
+        - CC=gcc-10
+        - CXX=g++-10
+      addons:
+        apt:
+          packages: ['g++-10']
+          sources:
+            - sourceline: 'ppa:ubuntu-toolchain-r/test'
+
+install:
+  - cmake --version
+
+script:
+  - which cmake
+  - printf "%s\n" "$PATH"
