@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@master
 
       - name: CMake
-        env:
-          PATH: ${{ env.PATH }}:/host_usr_local/bin
-        run: cmake --version
+        run: |
+          PATH="$PATH:/host_usr_local/bin"
+          cmake --version
