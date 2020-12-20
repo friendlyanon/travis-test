@@ -13,7 +13,7 @@ jobs:
     name: Test
 
     env:
-      PATH: ${{ env.PATH }}:/host_usr_local/bin
+      PATH: "${{ env.PATH }}:/host_usr_local/bin"
 
     steps:
       - uses: actions/checkout@master
