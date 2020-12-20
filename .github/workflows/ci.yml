@@ -8,8 +8,12 @@ jobs:
 
     container:
       image: gcc:10
+      options: -v /usr/local:/host_usr_local
 
     name: Test
+
+    env:
+      PATH: ${{ env.PATH }}:/host_usr_local/bin
 
     steps:
       - uses: actions/checkout@master
