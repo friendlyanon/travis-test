@@ -12,11 +12,10 @@ jobs:
 
     name: Test
 
-    env:
-      PATH: "${{ env.PATH }}:/host_usr_local/bin"
-
     steps:
       - uses: actions/checkout@master
 
       - name: CMake
+        env:
+          PATH: ${{ env.PATH }}:/host_usr_local/bin
         run: cmake --version
